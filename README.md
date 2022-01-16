@@ -26,5 +26,14 @@ If you are using this code, please consider citing:
 ```
 
 
-## Dependencies
-Eigen3
+## Dependencies (tested under Ubuntu20.04)
+- Eigen3: sudo apt install libeigen3-dev
+- OpenMP: 
+- PCL: sudo apt install libpcl-dev
+- assimp: sudo apt-get install assimp-utils libassimp5 libassimp-dev
+- CGAL: sudo apt-get install libcgal-dev
+
+
+
+
+
