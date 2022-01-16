@@ -21,8 +21,7 @@ string PROJECT_DIR = "/home/senjing/3d-vision/";
 string BASE_DIR = PROJECT_DIR + "ToF_camera_simulator/";
 string DATA_DIR = BASE_DIR + "data/mech12_stl/";
 string FILELSIT_DIR = "macrolist";
-// string SAVE_DIR = "/home/senjing/3d-vision/data/mechnet_pcd_FC/";
-string SAVE_DIR = BASE_DIR + "data/three_cam_macro_pcd/";
+string SAVE_DIR = BASE_DIR + "data/three_cam_pcd/";
 bool COMBINE = false;
 
 
