@@ -9,7 +9,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON) #...is required...
 set(CMAKE_CXX_EXTENSIONS OFF) #...without compiler extensions like gnu++11
 
 #set the default path for built executables to the "bin" directory
-set(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/bin)
+set(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/build)
 #set the default path for built libraries to the "lib" directory
 set(LIBRARY_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/lib)
 #set the path for project includes
@@ -25,6 +25,10 @@ message("Compiling for Ubuntu version ${_distro}")
 find_package(Eigen3 REQUIRED)
 message("Found Eigen3")
 include_directories(${EIGEN3_INCLUDE_DIR})
+
+# find_package(CGAL REQUIRED)
+# message("Found CGAL")
+# include_directories(${CGAL_INCLUDE_DIR})
 
 find_package(OpenMP REQUIRED)
 if(OPENMP_FOUND)
@@ -62,12 +66,12 @@ endif(PCL_FOUND)
 # endif(OpenMesh_FOUND)
 
 
-# find_package(CGAL QUIET)
-# if(CGAL_FOUND)
-#   message("Found CGAL")
-#   include_directories(${CGAL_INCLUDE_DIRS})
-#   set(LIBS ${LIBS} ${CGAL_LIBS})
-# endif(CGAL_FOUND)
+find_package(CGAL REQUIRED)
+if(CGAL_FOUND)
+  message("Found CGAL")
+  include_directories(${CGAL_INCLUDE_DIRS})
+  set(LIBS ${LIBS} ${CGAL_LIBS})
+endif(CGAL_FOUND)
 
 
 # add_library(${PROJECT_NAME} src/kinectSimulator.cpp src/noiseutils.cpp)

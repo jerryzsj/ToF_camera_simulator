@@ -18,11 +18,11 @@
 using namespace std;
 
 string PROJECT_DIR = "/home/senjing/3d-vision/";
-string BASE_DIR = PROJECT_DIR + "stl_sampling/";
-string DATA_DIR = PROJECT_DIR + "data/mechnet_stl_12/";
+string BASE_DIR = PROJECT_DIR + "ToF_camera_simulator/";
+string DATA_DIR = BASE_DIR + "data/mech12_stl/";
 string FILELSIT_DIR = "macrolist";
 // string SAVE_DIR = "/home/senjing/3d-vision/data/mechnet_pcd_FC/";
-string SAVE_DIR = "/tmp/mechnet_3cam_macro/";
+string SAVE_DIR = BASE_DIR + "data/three_cam_macro_pcd/";
 bool COMBINE = false;
 
 
@@ -57,7 +57,7 @@ void scan_single_stl(string filename, int num_samples)
 {    
     MeshAndModel* myModel = new MeshAndModel;
     TreeAndTri* mySearch = new TreeAndTri;
-    Kinect* myKinect = new Kinect(200.0);
+    Kinect* myKinect = new Kinect(200.0); // set distance between Kinect and cooridinate-origin to be 200mm
 
     load_single_stl(filename, myModel, mySearch);
 
@@ -113,9 +113,11 @@ void scan_single_stl(string filename, int num_samples)
 
 int main(int argc, char **argv)
 {
+    cout << "Usage: ./three_cam_macro NUM_SAMPLE FILELIST" << endl;
+    cout << "DATA_DIR" << DATA_DIR <<endl;
     // sys init
     srand(time(NULL));
-    cout << PCL_VERSION_PRETTY << endl;
+    cout << "PCL version:" << PCL_VERSION_PRETTY << endl;
     cgalVersion();
 
     boost::filesystem::create_directories(SAVE_DIR);
