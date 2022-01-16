@@ -3,9 +3,9 @@ ToF camara simulator to capture point clouds from STL mesh models
 
 This C++ project implements the simplified Kinect sensor model:
 
-		camera_width = 1280
-		camera_height = 720
-		camera_focal_length = 1160
+		camera_width = 1280 pixels
+		camera_height = 720 pixels
+		camera_focal_length = 1160 mm
 
 The C++ codes were implemented based on project "render_kinect" at https://github.com/jbohg/render_kinect
 
