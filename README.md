@@ -13,7 +13,7 @@ This implementation was simplified with perfect Kinect model without any error o
 The implementation focused on simulated scene with multiple cameras. 
 
 If you are using this code, please cite the work:
-**Automatic identification of mechanical parts for robotic disassembly using the PointNet deep neural network. **
+**Automatic identification of mechanical parts for robotic disassembly using the PointNet deep neural network.**
 Senjing Zheng, Feiying Lan, Luca Baronti, Duc Pham, and Marco Castellani. International Journal of Manufacturing Research 17, no. 1 (2022).
 
 
