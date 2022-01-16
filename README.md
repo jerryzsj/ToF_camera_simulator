@@ -12,9 +12,28 @@ The C++ codes were implemented based on project "render_kinect" at https://githu
 This implementation was simplified with perfect Kinect model without any error or noise.
 The implementation focused on simulated scene with multiple cameras. 
 
-If you are using this code, please cite the work:
+If you are using this code, please consider citing:
+```
+@article{zheng2022automatic,
+  title={Automatic identification of mechanical parts for robotic disassembly using the PointNet deep neural network},
+  author={Zheng, Senjing and Lan, Feiying and Baronti, Luca and Pham, Duc and Castellani, Marco},
+  journal={International Journal of Manufacturing Research},
+  volume={17},
+  number={1},
+  year={2022},
+  publisher={Inderscience Publishers (IEL)}
+}
+```
 
-Automatic identification of mechanical parts for robotic disassembly using the PointNet deep neural network. Senjing Zheng, Feiying Lan, Luca Baronti, Duc Pham, and Marco Castellani. International Journal of Manufacturing Research 17, no. 1 (2022).
+
+## Dependencies (tested under Ubuntu20.04)
+- Eigen3: sudo apt install libeigen3-dev
+- OpenMP: 
+- PCL: sudo apt install libpcl-dev
+- assimp: sudo apt-get install assimp-utils libassimp5 libassimp-dev
+- CGAL: sudo apt-get install libcgal-dev
+
+
 
 
 
