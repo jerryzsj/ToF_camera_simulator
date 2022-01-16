@@ -50,21 +50,6 @@ if(PCL_FOUND)
   set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${OpenPCL_CXX_FLAGS} -DHAVE_PCL")
 endif(PCL_FOUND)
 
-# set (OpenCV_DIR=/home/senjing/opencv-2.4.13.6/release/)
-# find_package(OpenCV QUIET REQUIRED COMPONENTS core highgui)
-# if(OpenCV_FOUND)
-#   message("Found OpenCV")
-#   include_directories(${OpenCV_INCLUDE_DIRS})
-#   set(LIBS ${LIBS} ${OpenCV_LIBS})
-# endif(OpenCV_FOUND)
-
-# find_package(OpenMesh QUIET)
-# if(OpenMesh_FOUND)
-#   message("Found OpenMesh")
-#   include_directories(${OpenMesh_INCLUDE_DIRS})
-#   set(LIBS ${LIBS} ${OpenMesh_LIBS})
-# endif(OpenMesh_FOUND)
-
 
 find_package(CGAL REQUIRED)
 if(CGAL_FOUND)
@@ -74,20 +59,14 @@ if(CGAL_FOUND)
 endif(CGAL_FOUND)
 
 
-# add_library(${PROJECT_NAME} src/kinectSimulator.cpp src/noiseutils.cpp)
-# target_link_libraries(${PROJECT_NAME} assimp CGAL noise ${LIBS}) 
+add_executable(three_cam_D500 src/three_cam_D500.cpp)
+target_link_libraries(three_cam_D500 CGAL assimp ${LIBS})
 
-# add_executable(render_object src/main_kinect.cpp)
-# target_link_libraries(render_object ${PROJECT_NAME})
+add_executable(full_cam_D500 src/full_cam_D500.cpp)
+target_link_libraries(full_cam_D500 CGAL assimp ${LIBS})
 
-# add_library(${PROJECT_NAME} src/kinectSimulator.cpp src/noiseutils.cpp)
-# arget_link_libraries(${PROJECT_NAME} assimp CGAL noise ${LIBS})
+add_executable(three_cam_D200 src/three_cam_D200.cpp)
+target_link_libraries(three_cam_D200 CGAL assimp ${LIBS})
 
-add_executable(14_cam_ycb src/14_cam_ycb.cpp)
-target_link_libraries(14_cam_ycb CGAL assimp ${LIBS})
-
-add_executable(three_cam_macro src/three_cam_macro.cpp)
-target_link_libraries(three_cam_macro CGAL assimp ${LIBS})
-
-add_executable(full_cam_macro src/full_cam_macro.cpp)
-target_link_libraries(full_cam_macro CGAL assimp ${LIBS})
+add_executable(full_cam_D200 src/full_cam_D200.cpp)
+target_link_libraries(full_cam_D200 CGAL assimp ${LIBS})
